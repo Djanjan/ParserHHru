@@ -1,0 +1,285 @@
+﻿<Window x:Class="ParserHHru.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParserHHru"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <TabControl HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" Margin="0,29,-0.4,0">
+
+            <TabItem Header="Настройки Поиска" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="99*"/>
+                        <ColumnDefinition Width="98*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="194*"/>
+                        <RowDefinition Height="187*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Grid.Column="0"
+                              Grid.Row="0"
+                              Header="Критерии поиска"
+                              FontSize="17" Margin="2,2,2,46.8" Grid.RowSpan="2">
+                        <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Margin="5"
+                                Grid.Column="0"
+                                Grid.Row="0">
+
+                            <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="50">
+
+                                <TextBlock Text="Поиск:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <TextBox x:Name="SearchTextBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Height="35"
+                                     Width="250"
+                                     Margin="5"/>
+                            </StackPanel>
+
+                            <!--<StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="50">
+
+                                <TextBlock Text="Количество отображаемых резюме:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <TextBox x:Name="CountSummaryTextBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Height="35"
+                                     Width="80"
+                                     Margin="5"/>
+                            </StackPanel>-->
+
+                            <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="50">
+
+                                <TextBlock Text="Возраст от:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <TextBox x:Name="AgeFromTextBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Height="35"
+                                     Width="80"
+                                     Margin="5"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="50">
+
+                                <TextBlock Text="Возраст до:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <TextBox x:Name="AgeToTextBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Height="35"
+                                     Width="80"
+                                     Margin="5"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="50">
+
+                                <TextBlock Text="Пол:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <ComboBox x:Name="GenderComboBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Height="30"
+                                     Width="103"
+                                          Margin="5,10,5,9.6"
+                                          SelectedIndex="2">
+                                    <TextBlock Text="female"></TextBlock>
+                                    <TextBlock Text="male"></TextBlock>
+                                    <TextBlock Text="unknown"></TextBlock>
+                                </ComboBox>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </GroupBox>
+
+
+                    <GroupBox HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Grid.Column="1"
+                              Grid.Row="0"
+                              Header="Выгрузка в CSV"
+                              FontSize="17" Margin="2,2,2,-0.2" Grid.RowSpan="2">
+
+                        <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Margin="5"
+                                Grid.Column="1"
+                                Grid.Row="0">
+
+                            <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="80">
+
+                                <TextBlock Text="Использовать путь для CSV:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <Button x:Name="OpenDialogFolden"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5"
+                                    Content="Открыть"
+                                    Click="OpenDialogFolden_Click"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Height="50"
+                                    Grid.Column="1"
+                                    Grid.Row="0">
+
+                                <TextBlock Text="Количество резюме:"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5"
+                                       FontSize="15"/>
+
+                                <TextBox x:Name="CountSummaryAllTextBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Height="35"
+                                     Width="80"
+                                     Margin="5"/>
+                            </StackPanel>
+
+                            <Button x:Name="ParseStart"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Width="150"
+                                Height="50"
+                                Content="Старт"
+                                    Margin="8"
+                                Click="ParseStart_Click"/>
+
+                        </StackPanel>
+
+                    </GroupBox>
+                    <Button x:Name="ExitButton" Content="Выйти" 
+                            HorizontalAlignment="Left" FontSize="15"
+                            Margin="10,131,0,0" Grid.Row="1" 
+                            VerticalAlignment="Top" Width="96" Height="32" Click="ExitButton_Click"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="FeedbackTabItem" Header="Просмотр откликов" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+
+                    <TextBlock Text="Выберете вакансию:" 
+                               Margin="10,10,0,0" Height="30" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Left" Width="298"/>
+                    <ListView x:Name="VacancyListView" Margin="10,45,10.4,9.6">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="250">Назввание</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Link}">Ссылка</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+
+                    <Button x:Name="WriteFeedbakButton"
+                            Content="Выгрузить отклики в CSV" 
+                            Margin="313,5,0,0" Click="WriteFeedbakButton_Click" HorizontalAlignment="Left" Width="265" Height="35" VerticalAlignment="Top"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Просмотр данных" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="SummaryViewDataGrid"
+                              Margin="0,0,0,-0.2"
+                              AutoGenerateColumns="True"/>
+
+                    <!--<Button x:Name="NextViewButton"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Margin="2,2,7,2" Height="30" Width="104"
+                            Content="Следущие"
+                            Click="NextViewButton_Click"/>
+
+                    <Button x:Name="PrevViewButton"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Margin="2,0,0,1.6" Height="30" Width="132"
+                            Content="Предыдущие"
+                            Click="PrevViewButton_Click"/>-->
+
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <ProgressBar x:Name="ParseProgressBar"
+                     Height="29" 
+                     VerticalAlignment="Top" 
+                     Margin="0,0,-0.4,0" Maximum="500"/>
+        <StackPanel x:Name="CountMaxSummaryPanel"
+                    HorizontalAlignment="Left" 
+                   Margin="222,0,0,0" VerticalAlignment="Top" Height="29" Width="327"
+                    Orientation="Horizontal"
+                    Visibility="Hidden">
+            <TextBlock HorizontalAlignment="Left" 
+                   Margin="76,8,0,-1.2" TextWrapping="Wrap" 
+                   Text="Максимальное число резюме:" VerticalAlignment="Top" Height="22" Width="185"/>
+            <TextBlock x:Name="CountMaxSummaryTextBlock" HorizontalAlignment="Left" 
+                   Margin="0,8,0,-0.2" TextWrapping="Wrap" 
+                   Text="500" VerticalAlignment="Top" Height="21" Width="62"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

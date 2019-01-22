@@ -1,0 +1,75 @@
+﻿<Window x:Class="ParserHHru.AuthorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ParserHHru"
+      mc:Ignorable="d" 
+      Height="450" Width="800"
+      Title="AuthorizationPage" Closed="Window_Closed">
+
+    <Grid>
+        <StackPanel x:Name="AuthorizationPanal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="100">
+            
+            <StackPanel x:Name="LoginPanel"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,5">
+                
+                <TextBlock Text="Login"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="25"
+                           Margin="5"/>
+                
+                <TextBox x:Name="LoginTextBox"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Center"
+                     Height="40" Margin="0" Width="240">
+
+                </TextBox>
+                
+            </StackPanel>
+
+            <StackPanel x:Name="PasswordPanel"
+                        Orientation="Horizontal"
+                        Margin="0,5,0,5">
+
+                <TextBlock Text="Password"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="25"
+                           Margin="5"/>
+
+                <TextBox x:Name="PasswordTextBox"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Width="200"
+                     Height="40">
+
+                </TextBox>
+            </StackPanel>
+
+            <Button x:Name="AuthorizationButton"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Height="50"
+                    Width="120"
+                    Content="Sign In"
+                    FontSize="25"
+                    Click="AuthorizationButton_Click"/>
+            
+            <Button x:Name="AuthorizationSkipButton"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Height="30"
+                    Width="80"
+                    Content="Skip"
+                    FontSize="20"
+                    Margin="5"
+                    Click="AuthorizationSkipButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
